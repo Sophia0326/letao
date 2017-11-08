@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乐淘登录管理页面</title>
+    <!-- bootstrapCSS框架 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!-- 表单验证插件CSS -->
+    <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
+    <!-- 进度条CSS插件 -->
+    <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+    <!-- 初始化CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 公共 CSS文件 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- login CSS文件 -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- 后台管理系统登录框 栅格系统 -->
+    <div class="container">
+        <!-- 栅格参数 -->
+        <div class="col-sm-4 col-sm-offset-4">
+            <!-- 外框样式位置:组件(面板) -->
+            <div class="panel panel-primary mt">
+                <div class="panel-heading">
+                    <h4 class="panel-title text-center">后台管理系统</h4>
+                </div>
+                <div class="panel-body">
+                    <!-- 登录框form表单位置:全局CSS样式(表单:水平排列的表单) -->
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">用户名</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="请输入用户名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-3 control-label">密码</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-6">
+                                <button type="reset" class="btn btn-default pull-left">重置</button>
+                                <button type="submit" class="btn btn-primary pull-right">登录</button
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="lib/jquery/jquery.min.js"></script>
+<!-- bootstrapJS框架 -->
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- 进度条JS插件 -->
+<script src="lib/nprogress/nprogress.js"></script>
+<!-- 表单验证插件 -->
+<script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<!-- 公共 JS文件 -->
+<script src="js/common.js"></script>
+<!-- login JS文件 -->
+<script src="js/login.js"></script>

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+body{
+    background-color: #222d32;
+}
+/* 登录框距离顶部的距离 */
+.mt{
+    margin-top: 150px;
+}
+/* 登录框头部 */
+.panel-heading{
+    height: 60px;
+    padding: 20px 15px;
+}
+/* 登录框标题 */
+.panel-heading .panel-title{    
+    font-size: 18px;
+}
