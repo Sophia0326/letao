@@ -1,1 +1,187 @@
 @charset 'UTF-8';
+a:hover,
+a:focus {
+    color: #bbb;
+}
+
+
+/* login 页面样式 */
+
+/* 登录框距离顶部的距离 */
+.mt {
+    margin-top: 150px;
+}
+/* 登录框头部 */
+.panel-heading {
+    height: 60px;
+    padding: 20px 15px;
+}
+/* 登录框标题 */
+.panel-heading .panel-title {
+    font-size: 18px;
+}
+
+/* /login 页面样式 */
+
+
+/* 左侧边栏 */
+
+.lt_aside {
+    height: 100%;
+    width: 180px;
+    background-color: #222d32;
+    position: absolute;
+    left: 0;
+    transition: all 1s;
+}
+
+
+/* 商标 */
+
+.lt_aside .brand {
+    background-color: #367fa9;
+    height: 50px;
+    text-align: center;
+}
+
+.lt_aside .brand a {
+    line-height: 50px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* 管理员 */
+
+.lt_aside .user {
+    height: 110px;
+    line-height: 110px;
+    padding-left: 20px;
+}
+
+.lt_aside .user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.lt_aside .user span {
+    color: #fff;
+    margin-left: 5px;
+}
+
+
+/* 管理菜单分类 */
+
+.lt_aside .menu a {
+    display: block;
+    line-height: 40px;
+    height: 40px;
+    padding-left: 40px;
+    font-size: 14px;
+    border: 3px solid transparent;
+}
+
+.lt_aside .menu a>i {
+    margin-right: 5px;
+}
+
+.lt_aside .menu .child a {
+    display: block;
+    padding-left: 60px;
+}
+
+.lt_aside .menu a.now {
+    background-color: #1d1f21;
+    border-left-color: #069;
+    color: #ddd;
+}
+
+
+/* /左侧边栏 */
+
+
+/* 右侧边栏 */
+
+.rt_aside {
+    margin-left: 180px;
+    transition: all 1s;
+}
+
+
+/* 顶部通栏 */
+
+.rt_aside .topper {
+    height: 50px;
+    line-height: 50px;
+    background-color: #3c8dbc;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.rt_aside .topper a i {
+    color: #fff;
+    font-size: 16px;
+}
+
+
+/* 面包屑导航(路径导航) */
+
+.breadcrumb {
+    height: 35px;
+}
+
+.breadcrumb li {
+    line-height: 20px;
+}
+
+.breadcrumb li a {
+    font-size: 14px;
+}
+
+.breadcrumb li:nth-of-type(1) a {
+    color: #337ab7;
+}
+
+
+/* echart表 */
+
+.echarts .table_left,
+.echarts .table_right {
+    width: 45%;
+    height: 400px;
+}
+
+
+/* 左侧边栏隐藏样式 */
+
+.hidden_l {
+    left: -180px;
+}
+
+
+/* 右侧边栏扩展到左侧边栏设置margin-left:0px */
+
+.hidden_r {
+    margin-left: 0px;
+}
+
+
+/* 模态框提示信息 */
+
+#myModal .confirm {
+    color: #a94442;
+    font-size: 14px;
+    height: 50px;
+}
+
+
+/* 模态框提示文字颜色 */
+
+#myModal .confirm i {
+    margin-right: 2px;
+}
+
+
+/* /右侧边栏 */

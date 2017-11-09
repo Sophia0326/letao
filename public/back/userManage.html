@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="css/base.css">
     <!-- 公共 CSS文件 -->
     <link rel="stylesheet" href="css/common.css">
+    <!-- index CSS文件 -->
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -35,7 +37,7 @@
             <ul>
                 <!-- 用户管理 -->
                 <li>
-                    <a href="user.html" >
+                    <a href="user.html" class="now">
                         <i class="glyphicon glyphicon-user"></i>
                         用户管理
                     </a>
@@ -45,9 +47,9 @@
                     <a href="javascript:;">
                         <i class="glyphicon glyphicon-list"></i>分类管理</a>
                     <!-- 分类管理 子分类 -->
-                    <div class="child">
+                    <div class="child" style="display:none">
                         <a href="first.html">一级分类</a>
-                        <a href="second.html" class="now">二级分类</a>
+                        <a href="second.html">二级分类</a>
                     </div>
                 </li>
                 <!-- 商品管理 -->
@@ -78,12 +80,16 @@
                     <a href="index.html">管理系统</a>
                 </li>
                 <li>
-                    <a href="javascript:;">分类管理</a>
-                </li>
-                <li>
-                    <a href="second.html">二级分类</a>
+                    <a href="userManage.html">用户管理</a>
                 </li>
             </ol>
+            <!-- echarts表 -->
+            <div class="echarts">
+                <!-- 柱状图 -->
+                <div class="pull-left table_left"></div>
+                <!-- 饼状图 -->
+                <div class="pull-right table_right"></div>
+            </div>
         </div>
     </div>
     <!-- /右侧边栏 -->
@@ -123,3 +129,5 @@
 <script src="lib/echarts/echarts.min.js"></script>
 <!-- 公共 JS文件 -->
 <script src="js/common.js"></script>
+<!-- login JS文件 -->
+<script src="js/index.js"></script>
