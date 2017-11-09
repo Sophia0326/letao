@@ -1,4 +1,7 @@
 /*初始化*/
+html{
+	height: 100%;
+}
 body,
 h1,
 h2,
@@ -42,6 +45,7 @@ img{
 }
 body{
 	font:12px/100% "微软雅黑";
+	height: 100%;
 }
 input{
 	outline: none;
@@ -61,5 +65,11 @@ h4,
 h5,
 h6 {
 	font-weight: normal;
+}
+a:link,
+a:visited,
+a:hover,
+a:active{
+	text-decoration: none;
 }
 
