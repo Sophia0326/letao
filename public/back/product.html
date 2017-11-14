@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>乐淘管理系统-首页</title>
+    <title>乐淘管理系统-商品管理</title>
     <!-- bootstrapCSS框架 -->
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <!-- 表单验证插件CSS -->
@@ -53,7 +53,7 @@
                 <!-- 商品管理 -->
                 <li>
                     <a href="product.html" class="now">
-                        <i class="glyphicon glyphicon-tags" ></i>商品管理</a>
+                        <i class="glyphicon glyphicon-tags"></i>商品管理</a>
                 </li>
             </ul>
         </div>
@@ -81,6 +81,29 @@
                     <a href="product.html">商品管理</a>
                 </li>
             </ol>
+            <div class="ad_content">
+                <button id="addBtn" class="btn btn-default mb_15">添加商品</button>
+                <!-- CSS全局样式:表格 -->
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th width=5%>序号</th>
+                            <th width=25%>商品名称</th>
+                            <th width=25%>商品描述</th>
+                            <th width=10%>商品库存</th>
+                            <th width=10%>商品尺寸</th>
+                            <th width=10%>商品状态</th>
+                            <th width=15%>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 挖个坑 -->
+                    </tbody>
+                </table>
+                <div class="text-right">
+                    <ul id="paginator"></ul>
+                </div>
+            </div>
         </div>
     </div>
     <!-- /右侧边栏 -->
@@ -106,17 +129,146 @@
             </div>
         </div>
     </div>
+    <!-- 点击上架或下架按钮弹出模态框 shelfModal-->
+    <div class="modal fade" id="shelfModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+                </div>
+                <div class="modal-body confirm">
+                    <i class="glyphicon glyphicon-info-sign"></i>您确定要
+                    <strong></strong>此产品吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary btn_confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 点击添加商品按钮弹出模态框 addBtn-->
+    <div class="modal fade" id="addBtnModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">编辑商品</h4>
+                </div>
+                <div class="modal-body">
+                    <form id='form'>
+                        <!-- 二级分类下拉框 -->
+                        <div class="form-group">
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="true">
+                                    <span class="dropdown_text">
+                                        请选择二级分类
+                                    </span>
+                                    <!--上下拉符号 caret 符号-->
+                                    <span class="caret"></span>
+                                    <!-- 隐藏域brandId -->
+                                    <input type="hidden" id="brandId" name="brandId" >
+                                </button>
+                                <ul class="dropdown-menu" >
+                                    <!-- 挖个坑 -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="proName" placeholder="请输入商品名称">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="proDesc" placeholder="请输入商品描述"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="num" placeholder="请输入商品库存">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="size" placeholder="请输入商品尺码">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="price" placeholder="请输入商品价格">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="oldPrice" placeholder="请输入商品原价">
+                        </div>
+                        <!-- 上传图片 -->
+                        <div class="form-group">
+                            <div class="upload_box">
+                                <!-- 上传图片按钮 -->
+                                <button class="btn btn-default">上传图片</button>
+                                <!-- 上传图片插件 -->
+                                <input id="fileupload" type="file" name="pic1" data-url="/product/addProductPic" multiple>
+                            </div>
+                        </div>
+                        <!-- 图片预览盒子 -->
+                        <div class="form-group img_box">
+                            <input type="hidden" name="productLogo" id="productLogo">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" form="form" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" form="form" class="btn btn-primary btn_submit">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
+<!-- 模板js 文件 -->
+<script src="lib/artTemplate/template-web.js"></script>
+<!-- 商品详情模板 -->
+<script type="text/html" id="pro_content">
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)*size+i+1}}</td>
+        <td>{{v.proName}}</td>
+        <td>{{v.proDesc}}</td>
+        <td>{{v.num}}</td>
+        <td>{{v.size}}</td>
+        <td>{{v.statu===1?'已下架':'已上架'}}</td>
+        <td>
+            {{if v.statu===1}}
+            <button class="btn btn-success btn_upshelf">上架</button>
+            {{/if}} {{if v.statu===0}}
+            <button class="btn btn-danger btn_downshelf">下架</button>
+            {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+</script>
+<!-- 添加商品二级分类下拉渲染模板 -->
+<script type="text/html" id="tpl">
+    {{each rows v i}}
+    <li>
+        <a href="javascript:;" data-id="{{v.id}}">{{v.brandName}}</a>
+    </li>   
+    {{/each}}      
+</script>
 <script src="lib/jquery/jquery.min.js"></script>
+<!-- Jquery 文件上传 ui小部件,上传插件依赖了jquery UI的小部件 -->
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<!-- 如果   文件上传  的图片需要跨域,需要引入此文件,不跨域,则不需要 -->
+<script src="lib/jquery-fileupload/jquery.iframe-transport.js"></script>
+<!-- Jquery 文件上传  插件 -->
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
 <!-- bootstrapJS框架 -->
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <!-- 进度条JS插件 -->
 <script src="lib/nprogress/nprogress.js"></script>
 <!-- 表单验证插件 -->
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
-<!-- 个性化图表插件 -->
-<script src="lib/echarts/echarts.min.js"></script>
+<!-- 分页插件 -->
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <!-- 公共 JS文件 -->
 <script src="js/common.js"></script>
+<!-- product js文件 -->
+<script src="js/product.js"></script>

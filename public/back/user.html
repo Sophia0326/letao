@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>乐淘管理系统-首页</title>
+    <title>乐淘管理系统-用户管理</title>
     <!-- bootstrapCSS框架 -->
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <!-- 表单验证插件CSS -->
@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="css/base.css">
     <!-- 公共 CSS文件 -->
     <link rel="stylesheet" href="css/common.css">
+    <!-- index CSS文件 -->
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -78,9 +80,31 @@
                     <a href="index.html">管理系统</a>
                 </li>
                 <li>
-                    <a href="userManage.html">用户管理</a>
+                    <a href="user.html">用户管理</a>
                 </li>
             </ol>
+            <div class="ad_content">
+                <!-- CSS全局样式:表格 -->
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th width=10%>序号</th>
+                            <th width=30%>用户名</th>
+                            <th width=30%>手机号</th>
+                            <th width=20%>状态</th>
+                            <th width=10%>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 挖坑 -->
+                    </tbody>
+
+                </table>
+                <!--boostrap分页插件如果是3.0版本，要求这个盒子必须是ul-->
+                <div class="text-right">
+                    <ul id="paginator"></ul>
+                </div>
+            </div>
         </div>
     </div>
     <!-- /右侧边栏 -->
@@ -106,12 +130,54 @@
             </div>
         </div>
     </div>
+    <!-- 启用禁用模态框 -->
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+                </div>
+                <div class="modal-body confirm">
+                    <i class="glyphicon glyphicon-info-sign"></i>您确定要<strong></strong>用户吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary btn_confirm edit">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
+<!-- 模板js 文件 -->
+<script src="lib/artTemplate/template-web.js"></script>
+<!-- 按钮的启用和禁用模板 -->
+<script type="text/html" id="disabled_btn">
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)*size+i+1}}</td>
+        <td>{{v.username}}</td>
+        <td>{{v.mobile}}</td>
+        <td>{{v.isDelete===1?'正常':'禁用'}}</td>
+        <td  data-id={{v.id}} data-name={{v.username}}>
+            {{if v.isDelete===1}}
+            <button class="btn btn-danger btn-sm">禁用</button>
+            {{/if}} 
+            {{if v.isDelete===0}}
+            <button class="btn btn-success btn-sm">启用</button>
+            {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+</script>
 <script src="lib/jquery/jquery.min.js"></script>
 <!-- bootstrapJS框架 -->
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <!-- 进度条JS插件 -->
 <script src="lib/nprogress/nprogress.js"></script>
 <!-- 表单验证插件 -->
@@ -120,3 +186,5 @@
 <script src="lib/echarts/echarts.min.js"></script>
 <!-- 公共 JS文件 -->
 <script src="js/common.js"></script>
+<!-- login JS文件 -->
+<script src="js/user.js"></script>

@@ -1,0 +1,58 @@
+@charset "UTF-8";
+@import 'base.less';
+
+/* 导航区 */
+
+.navCategory {
+    padding: 10px;
+    ul {
+        width: 100%;
+        li {
+            float: left;
+            width: 33.33%;
+            a {
+                img {
+                    // 图片的宽度100%可以自适应父盒子li
+                    width: 100%; // display: block;
+                }
+            }
+        }
+    }
+}
+
+
+/* /导航区 */
+
+
+/* 产品区 */
+
+.product {
+    width: 100%;
+    padding: 10px;
+    a {
+        float: left;
+        width: 50%;
+        height: 300px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+        >span:nth-of-type(1) {
+            color: #007aff;
+            font-size: 16px;
+            line-height: 18px;
+        }
+        >p{
+            line-height: 30px;
+            font-size: 12px;
+            >span{
+                color: red;
+            }
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+/* /产品区 */

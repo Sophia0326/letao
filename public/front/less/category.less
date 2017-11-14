@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@import 'base.less';
+// 头部返回箭头
+#header {
+    .btn_left {
+        float: left;
+        span {
+            font-weight: 700;
+            color: #fff;
+            padding-left: 10px;
+        }
+    }
+}
+
+
+/* 内容区 */
+
+#pro_content {
+    .pro_l {
+        position: relative;
+        width: 90px;
+        height: 100%;
+        float: left;
+        ul {
+            li {
+                &.now a{
+                    // 当前选中的table栏样式
+                    border-right: none;
+                    background-color: #fff;
+                }
+                a {
+                    // 左侧table栏样式
+                    display: block;
+                    width: 100%;
+                    height: 50px;
+                    color: #555;
+                    font-size: 16px;
+                    line-height: 50px;
+                    text-align: center;
+                    background-color: #eee;
+                    border-right: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                }
+            }
+        }
+    }
+    .pro_r {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        ul {
+            width: 100%;
+            li {
+                float: left;
+                width: 33.33%;
+                text-align: center;
+                a {
+                    img {
+                        width: 62px;
+                        height: 62px;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* /内容区 */

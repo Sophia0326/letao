@@ -7,19 +7,28 @@ a:focus {
 
 /* login 页面样式 */
 
+
 /* 登录框距离顶部的距离 */
+
 .mt {
     margin-top: 150px;
 }
+
+
 /* 登录框头部 */
+
 .panel-heading {
     height: 60px;
     padding: 20px 15px;
 }
+
+
 /* 登录框标题 */
+
 .panel-heading .panel-title {
     font-size: 18px;
 }
+
 
 /* /login 页面样式 */
 
@@ -184,4 +193,60 @@ a:focus {
 }
 
 
+/* user.html 用户管理页面 */
+
+
+/* 表格头部 th标签居中字体14px */
+
+.table.table-bordered th {
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+/* td标签文字居中 */
+
+.table.table-bordered td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+
+/* 添加按钮添加margin-bottom 15px */
+
+.mb_15 {
+    margin-bottom: 15px;
+}
+
+
 /* /右侧边栏 */
+
+
+/* product 商品管理页面 */
+
+
+/* 文本域禁止拖动 */
+
+textarea {
+    resize: none;
+}
+
+
+/* 上传图片隐藏域样式 */
+
+.upload_box{
+    position: relative;
+}
+ .upload_box #fileupload {
+    height: 35px;
+    width: 85px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+
+/* /product商品管理页面 */

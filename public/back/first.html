@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>乐淘管理系统-首页</title>
+    <title>乐淘管理系统-分类管理-一级分类</title>
     <!-- bootstrapCSS框架 -->
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <!-- 表单验证插件CSS -->
@@ -84,6 +84,26 @@
                     <a href="first.html">一级分类</a>
                 </li>
             </ol>
+            <div class="ad_content">
+                <button id="addBtn" class="btn btn-default mb_15">添加分类</button>
+                <!-- CSS全局样式:表格 -->
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th width=20%>序号</th>
+                            <th width=80%>分类名称</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 挖个坑 -->
+                    </tbody>
+                </table>
+                <div class="text-right">
+                    <ul id="paginator">
+                        <!-- 分页渲染 -->
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <!-- /右侧边栏 -->
@@ -109,12 +129,51 @@
             </div>
         </div>
     </div>
+    <!-- 点击添加分类弹出添加模态框 -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">添加分类</h4>
+                </div>
+                <div class="modal-body confirm">
+                    <!-- 一级分类输入框的form表单 -->
+                    <form id="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="addcategoryid" name="categoryName" placeholder="请输入一级分类">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" form="form" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" form="form" class="btn btn-primary btn_addBtn">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
+<!-- 分类详情模板渲染 -->
+<script type="text/html" id="tpl">
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)*size+i+1}}</td>
+        <td>{{v.categoryName}}</td>
+    </tr>
+    {{/each}}
+</script>
+<!-- 模板js 文件 -->
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/jquery/jquery.min.js"></script>
 <!-- bootstrapJS框架 -->
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- 引入分页插件 -->
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <!-- 进度条JS插件 -->
 <script src="lib/nprogress/nprogress.js"></script>
 <!-- 表单验证插件 -->
@@ -123,3 +182,5 @@
 <script src="lib/echarts/echarts.min.js"></script>
 <!-- 公共 JS文件 -->
 <script src="js/common.js"></script>
+<!-- first js文件 -->
+<script src="js/first.js"></script>
